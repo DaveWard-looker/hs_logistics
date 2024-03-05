@@ -28,13 +28,21 @@ view: uk_postcodes {
   }
 
   dimension: latitude {
+    hidden: yes
     type: string
     sql: ${TABLE}.latitude ;;
   }
 
   dimension: longitude {
+    hidden: yes
     type: string
     sql: ${TABLE}.longitude ;;
+  }
+
+  dimension: uk_postcode_location {
+    type: location
+    sql_longitude: ${longitude} ;;
+    sql_latitude: ${latitude} ;;
   }
 
   dimension: northing {
@@ -96,7 +104,7 @@ view: uk_postcodes {
     type: string
     sql: ${TABLE}.usertype ;;
   }
-  measure: count {
+  measure: count_of_postcodes {
     type: count
   }
 }

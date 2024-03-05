@@ -23,10 +23,8 @@ view: country_names_area {
 
   measure: total_country_area {
     type: sum
-    sql: ${country_area} ;;  }
-  measure: average_country_area {
-    type: average
-    sql: ${country_area} ;;  }
+    sql: ${country_area} ;;
+    }
 
   dimension: country_code {
     type: string

@@ -9,6 +9,7 @@ view: us_stores {
   # You need to define a primary key in a view in order to join to other views.
 
   dimension: id {
+    hidden: yes
     primary_key: yes
     type: number
     sql: ${TABLE}.ID ;;
@@ -18,6 +19,7 @@ view: us_stores {
     # This dimension will be called "Latitude" in Explore.
 
   dimension: latitude {
+    hidden: yes
     type: number
     sql: ${TABLE}.Latitude ;;
   }
@@ -26,16 +28,16 @@ view: us_stores {
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
-  measure: total_latitude {
-    type: sum
-    sql: ${latitude} ;;  }
-  measure: average_latitude {
-    type: average
-    sql: ${latitude} ;;  }
-
   dimension: longitude {
+    hidden: yes
     type: number
     sql: ${TABLE}.Longitude ;;
+  }
+
+  dimension: location {
+    type: location
+    sql_longitude: ${longitude} ;;
+    sql_latitude: ${latitude} ;;
   }
 
   dimension: name {
@@ -44,6 +46,7 @@ view: us_stores {
   }
 
   dimension: sq_ft {
+    hidden: yes
     type: number
     sql: ${TABLE}.Sq_Ft ;;
   }
@@ -52,8 +55,11 @@ view: us_stores {
     type: string
     sql: ${TABLE}.State ;;
   }
-  measure: count {
-    type: count
-    drill_fields: [id, name]
+
+  measure: total_sq_ft {
+    type: sum
+    sql: ${sq_ft} ;;
+    value_format_name: decimal_0
   }
+
 }

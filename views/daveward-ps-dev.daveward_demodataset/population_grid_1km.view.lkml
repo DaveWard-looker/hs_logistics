@@ -42,15 +42,23 @@ view: population_grid_1km {
   }
 
   dimension: latitude_centroid {
+    hidden: yes
     type: number
     value_format_name: id
     sql: ${TABLE}.latitude_centroid ;;
   }
 
   dimension: longitude_centroid {
+    hidden: yes
     type: number
     value_format_name: id
     sql: ${TABLE}.longitude_centroid ;;
+  }
+
+  dimension: population_location {
+    type: location
+    sql_longitude: ${longitude_centroid} ;;
+    sql_latitude: ${latitude_centroid} ;;
   }
 
   dimension: population {
@@ -65,11 +73,5 @@ view: population_grid_1km {
   measure: total_population {
     type: sum
     sql: ${population} ;;  }
-  measure: average_population {
-    type: average
-    sql: ${population} ;;  }
-  measure: count {
-    type: count
-    drill_fields: [country_name]
-  }
+
 }

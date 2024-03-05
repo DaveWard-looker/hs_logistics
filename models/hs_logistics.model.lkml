@@ -18,3 +18,7 @@ explore: logistics_order_items {
     relationship: many_to_one
   }
 }
+
+explore: us_stores {}
+
+explore: uk_postcodes {}
