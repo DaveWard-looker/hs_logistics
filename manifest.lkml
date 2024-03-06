@@ -7,6 +7,8 @@ project_name: "hs_logistics"
 #   project: "name_of_other_project"
 # }
 
+
+
 remote_dependency: hs_core {
   url: "git@github.com:DaveWard-looker/hs_core.git"
   ref: "master"

@@ -22,3 +22,5 @@ explore: logistics_order_items {
 explore: us_stores {}
 
 explore: uk_postcodes {}
+
+explore: population_grid_1km {}
