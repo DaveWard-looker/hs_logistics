@@ -6,6 +6,7 @@ include: "/views/**/*.view.lkml"
 include: "//hs_core/models/order_items.explore"
 include: "//hs_core/models/datagroups"
 include: "//hs_core/models/value_formats"
+include: "/views/order_items.view.lkml"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
