@@ -25,7 +25,7 @@ view: irish_property_prices {
 
   dimension_group: date_of_sale__dd_mm_yyyy_ {
     type: time
-    timeframes: [raw, date, week, month, quarter, year]
+    timeframes: [raw, date, month, quarter, year]
     convert_tz: no
     datatype: date
     sql: ${TABLE}.Date_of_Sale__dd_mm_yyyy_ ;;
