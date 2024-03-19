@@ -62,6 +62,11 @@ view: irish_property_price {
     type: average
     sql: ${price______} ;;  }
 
+  measure: max_price {
+    type: max
+    sql: ${price______} ;;
+  }
+
   dimension: property_size_description {
     type: string
     sql: ${TABLE}.Property_Size_Description ;;
